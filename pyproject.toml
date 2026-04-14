@@ -1,0 +1,30 @@
+[project]
+name = "api-testing-demo"
+version = "1.0.0"
+description = "Demo project showing multiple API testing strategies on a small FastAPI service."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.117.1",
+  "httpx>=0.28.1",
+  "jsonschema>=4.26.0",
+  "pydantic>=2.8.2",
+  "sqlalchemy>=2.0.48",
+  "uvicorn>=0.41.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=9.0.2"
+]
+postgres = [
+  "psycopg[binary]>=3.2.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = [
+  "reliability: long-running stability checks"
+]

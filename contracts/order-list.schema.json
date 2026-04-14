@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "item_id",
+      "quantity",
+      "customer_email",
+      "status",
+      "total_cents",
+      "created_at",
+      "request_id"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^ord-\\d{4}$"
+      },
+      "item_id": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "customer_email": {
+        "type": "string",
+        "format": "email"
+      },
+      "status": {
+        "type": "string",
+        "const": "confirmed"
+      },
+      "total_cents": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "request_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  }
+}

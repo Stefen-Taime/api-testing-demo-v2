@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Validation Captures</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-alt: #172033;
+        --ink: #e5eefc;
+        --muted: #9fb2d1;
+        --accent: #22c55e;
+        --border: rgba(159, 178, 209, 0.18);
+        --shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 24rem),
+          radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 30rem),
+          var(--bg);
+      }
+      main {
+        width: min(1480px, calc(100vw - 48px));
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+      .hero {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      .eyebrow {
+        margin: 0;
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.05;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        box-shadow: var(--shadow);
+      }
+      .card-header {
+        display: grid;
+        gap: 8px;
+        padding: 18px 20px 16px;
+        background: linear-gradient(180deg, rgba(23, 32, 51, 0.92), rgba(17, 24, 39, 0.96));
+        border-bottom: 1px solid var(--border);
+      }
+      .card-header h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+      .command {
+        margin: 0;
+        color: #c7d7f3;
+        font-size: 13px;
+        white-space: pre-wrap;
+      }
+      pre {
+        margin: 0;
+        padding: 20px;
+        min-height: 340px;
+        background: rgba(10, 15, 28, 0.92);
+        color: #dbeafe;
+        font-size: 13px;
+        line-height: 1.45;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">API Testing Demo</p>
+        <h1>Validation Command Outputs</h1>
+        <p class="sub">Captured from real local executions on April 14, 2026.</p>
+      </section>
+      <section class="grid">
+        
+        <article class="card">
+          <header class="card-header">
+            <h2>Smoke</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_smoke.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_smoke.py -q
+..                                                                       [100%]
+2 passed in 3.41s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Functional</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_functional.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_functional.py -q
+...                                                                      [100%]
+3 passed in 4.93s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Integration</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_integration.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_integration.py -q
+..                                                                       [100%]
+2 passed in 4.75s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Regression</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_regression.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_regression.py -q
+..                                                                       [100%]
+2 passed in 4.83s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Security</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_security.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_security.py -q
+....                                                                     [100%]
+4 passed in 4.78s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>UI HTTP Wiring</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_ui.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_ui.py -q
+..                                                                       [100%]
+2 passed in 4.78s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Fuzz</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_fuzz.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_fuzz.py -q
+.                                                                        [100%]
+1 passed in 4.52s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Reliability</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_reliability.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_reliability.py -q
+.                                                                        [100%]
+1 passed in 6.20s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Contract</h2>
+            <p class="command">$ make test TEST_ARGS='tests/test_contract.py -q'</p>
+          </header>
+          <pre>python3 -m pytest tests/test_contract.py -q
+..                                                                       [100%]
+2 passed in 4.71s</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>UI Browser Playwright</h2>
+            <p class="command">$ npm run ui:test -- --reporter=line</p>
+          </header>
+          <pre>&gt; api-testing-demo-ui@1.0.0 ui:test
+&gt; playwright test --reporter=line
+
+[WebServer] INFO:     Started server process [14785]
+
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+
+[WebServer] INFO:     Started server process [14786]
+
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+
+
+Running 2 tests using 1 worker
+
+(node:14787) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:14787) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] playwright/tests/dashboard.spec.js:36:3 › Dashboard UI › loads the dashboard and renders API-backed counters
+[2/2] playwright/tests/dashboard.spec.js:46:3 › Dashboard UI › reflects an order created through the real API
+  2 passed (6.4s)</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Load</h2>
+            <p class="command">$ jmeter -n -t jmeter/load-test-plan.jmx -l docs/validation/raw/load-results.jtl</p>
+          </header>
+          <pre>WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser &lt;summary&gt;
+Created the tree successfully using jmeter/load-test-plan.jmx
+Starting standalone test @ 2026 Apr 14 11:13:07 EDT (1776179587063)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary =    900 in 00:00:10 =   93.2/s Avg:     2 Min:     1 Max:    42 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Apr 14 11:13:16 EDT (1776179596945)
+... end of run</pre>
+        </article>
+        <article class="card">
+          <header class="card-header">
+            <h2>Stress</h2>
+            <p class="command">$ jmeter -n -t jmeter/stress-test-plan.jmx -l docs/validation/raw/stress-results.jtl</p>
+          </header>
+          <pre>WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser &lt;summary&gt;
+Created the tree successfully using jmeter/stress-test-plan.jmx
+Starting standalone test @ 2026 Apr 14 11:13:19 EDT (1776179599772)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +   2618 in 00:00:10 =  260.1/s Avg:    59 Min:     5 Max:  3062 Err:     0 (0.00%) Active: 32 Started: 81 Finished: 49
+summary +   2182 in 00:00:08 =  285.7/s Avg:   106 Min:     2 Max:  4541 Err:     0 (0.00%) Active: 0 Started: 120 Finished: 120
+summary =   4800 in 00:00:18 =  271.1/s Avg:    81 Min:     2 Max:  4541 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Apr 14 11:13:37 EDT (1776179617639)
+... end of run</pre>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

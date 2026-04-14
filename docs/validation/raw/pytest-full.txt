@@ -1,0 +1,21 @@
+python3 -m pytest 
+============================= test session starts ==============================
+platform darwin -- Python 3.12.8, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/stefen/api-testing
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.11.0, Faker-40.8.0, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 19 items
+
+tests/test_contract.py ..                                                [ 10%]
+tests/test_functional.py ...                                             [ 26%]
+tests/test_fuzz.py .                                                     [ 31%]
+tests/test_integration.py ..                                             [ 42%]
+tests/test_regression.py ..                                              [ 52%]
+tests/test_reliability.py .                                              [ 57%]
+tests/test_security.py ....                                              [ 78%]
+tests/test_smoke.py ..                                                   [ 89%]
+tests/test_ui.py ..                                                      [100%]
+
+============================== 19 passed in 4.06s ==============================

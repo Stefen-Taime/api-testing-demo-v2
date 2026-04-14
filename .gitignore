@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+.tmp/
+.venv/
+.env
+.DS_Store
+node_modules/
+playwright-report/
+test-results/
+*.db
+*.db-shm
+*.db-wal
+*.jtl
+*.log

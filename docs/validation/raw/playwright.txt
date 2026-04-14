@@ -1,0 +1,17 @@
+
+> api-testing-demo-ui@1.0.0 ui:test
+> playwright test --reporter=line
+
+
+
+
+
+Running 2 tests using 1 worker
+
+
+
+
+
+[1A[2K[1/2] playwright/tests/dashboard.spec.js:16:3 › Dashboard UI › loads the dashboard and renders API-backed counters
+[1A[2K[2/2] playwright/tests/dashboard.spec.js:26:3 › Dashboard UI › reflects an order created through the real API
+[1A[2K  2 passed (4.3s)

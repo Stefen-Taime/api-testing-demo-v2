@@ -1,0 +1,14 @@
+{
+  "name": "api-testing-demo-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright UI tests for the API testing demo project.",
+  "scripts": {
+    "ui:test": "playwright test",
+    "ui:test:headed": "playwright test --headed",
+    "ui:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2"
+  }
+}
